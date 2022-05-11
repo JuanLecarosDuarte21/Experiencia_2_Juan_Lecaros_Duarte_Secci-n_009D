@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="css/estilos.css" type="text/css" rel="stylesheet"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <title>Api</title>
+
+    <style>
+      body{
+        background-color: cornflowerblue;
+      }
+      table thead {
+            background:#302b63;
+            color:white;
+        }
+    </style>
+</head>
+
+
+
+
+<header class="header2">
+  <section id="logo1">
+      <img src="img/logo11.jpg" width="80" height="80" /> 
+  
+  </section>
+  
+      <div class="logo">SUPER PETS</div>
+      <nav>
+    <a href="Inicio.html">Inicio</a>
+    <a href="Quienes_somos.html">Quienes Somos</a>
+    <a href="Galeria.html">Galeria</a>
+    <a href="Registro.html">Registro</a>
+    <a href="Contacto.html">Contacto</a>
+    <a href="Feriados.html" >Feriados</a>
+       
+
+  </nav> 
+
+  
+  </section>
+</header>
+<section class="contenido wrapper"></section>
+
+</section>
+
+<body>
+  <div class="container mt-4 shadow-lg p-3 mb-5 bg-body rounded">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Fecha</th>
+          
+        </tr>
+      </thead>
+      <tbody id="data">
+      </tbody>
+    </table>
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <script>
+      let url = 'https://apis.digital.gob.cl/fl/feriados/2022';
+        fetch(url)
+            .then( response => response.json() )
+            .then( data => mostrarData(data) )
+            .catch( error => console.log(error) )
+
+        const mostrarData = (data) => {
+            console.log(data)
+            let body = ""
+            for (var i = 0; i < data.length; i++) {      
+               body+=`<tr><td>${data[i].nombre}</td><td>${data[i].fecha}`
+            }
+            document.getElementById('data').innerHTML = body
+            //console.log(body)
+        }
+    </script>
+
+
+<footer>
+   
+  <div class="container-footer-all">
+   
+       <div class="container-body">
+
+           <div class="colum1">
+               <h1>Mas información de la compañía/</h1>
+
+               <p>A continuación se encuentran nuestras redes y métodos de contacto. </p>
+
+           </div>
+
+           <div class="colum2">
+
+               <h1>Redes Sociales</h1>
+
+               <div class="row">
+                   <img src="icon/facebook.png">
+                   <label>Síguenos en Facebook</label>
+               </div>
+               <div class="row">
+                   <img src="icon/twitter.png">
+                   <label>Síguenos en Twitter</label>
+               </div>
+               <div class="row">
+                   <img src="icon/instagram.png">
+                   <label>Síguenos en Instagram</label>
+               </div>
+               
+           </div>
+
+           <div class="colum3">
+
+               <h1>Información de Contacto</h1>
+
+               <div class="row2">
+                   <img src="icon/house.png">
+                   <label>Talagante,
+                   local 5.
+                   </label>
+               </div>
+
+               <div class="row2">
+                   <img src="icon/smartphone.png">
+                   <label>+569 41001278</label>
+               </div>
+
+               <div class="row2">
+                   <img src="icon/contact.png">
+                    <label>superpets@gmail.com</label>
+               </div>
+
+           </div>
+
+       </div>
+   
+   </div>
+   
+   <div class="container-footer">
+          <div class="footer">
+               <div class="copyright">
+                Daniela Torres - Javiera Diaz © 2022 Todos los Derechos Reservados | <a href="">SUPER PETS</a>
+               </div>
+
+               <div class="information">
+                   <a href="">Información Compañía</a> | <a href="">Privación y Política</a> | <a href="">Términos y Condiciones</a>
+               </div>
+           </div>
+
+       </div>
+   
+</footer>
+</body>
+</html>

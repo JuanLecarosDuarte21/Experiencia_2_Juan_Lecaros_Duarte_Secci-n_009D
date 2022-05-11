@@ -525,7 +525,8 @@ body{
 
 .contenedor{
     width: 100;
-    max-width:1000px ;
+    max-width:960px ;
+    
     margin: auto;
     padding: 60px;
     background: #fff;
@@ -545,8 +546,8 @@ body{
 }
 
 .contenedor img{
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     float: left;
     margin-right: 20px;
     margin-bottom:20px ;
@@ -620,3 +621,40 @@ video{
 
 
 
+#modo{
+    width: 30px;
+    font-size: 50px;
+    margin:absolute;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.dark{
+    background: rgb(4, 24, 27);
+}
+
+.dark h1{
+    color: white;
+}
+
+.dark .descripcion{
+    color: rgb(209, 208, 208);
+}
+.dark #modo{
+    color: orange;
+}
+.dark .card__perfil{
+    background: rgb(16, 43, 51);
+}
+.dark p{
+    color: rgb(29, 11, 187);
+}
+.dark h2{
+    color: white;
+}
+.dark .enlace{
+    background: rgb(13, 84, 117);
+}
+.dark .card__perfil:hover{
+    border: solid green 2px;
+}
